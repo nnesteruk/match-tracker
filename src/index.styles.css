@@ -1,0 +1,35 @@
+@import url("./app/styles/global.style.css");
+@import "tailwindcss";
+
+@theme {
+  --color-white-dark: #fafafa;
+
+  --color-black-light: #0b0e12;
+
+  --color-red: #eb0237;
+  --color-red-dark: #701328;
+  --color-red-medium: #a01131;
+
+  --color-gray: #b4b5b6;
+  --color-gray-dark: #0f1318;
+
+  --color-green: #43ad28;
+
+  --color-orange: #eb6402;
+
+  --color-purple: #9747ff;
+}
+:root {
+  --color-white: #ffffff;
+  --color-black: #06080c;
+
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+._container {
+  width: 100%;
+  max-width: 1920px;
+  padding: 0 42px;
+  margin: 0 auto;
+}
