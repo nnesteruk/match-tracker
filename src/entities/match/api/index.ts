@@ -1,6 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 import { apiService } from "shared/api/api-service";
-import { MatchList } from "../model/match.types";
+import { MatchList } from "shared/types";
 
 export const matchesApi = {
   baseKey: "matches",

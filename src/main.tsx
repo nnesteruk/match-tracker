@@ -1,14 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.styles.css";
-import App from "./App.tsx";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "shared/api/query-client.ts";
+import { App } from "./app/app.component.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <App />
-    </QueryClientProvider>
+    <App />
   </StrictMode>,
 );

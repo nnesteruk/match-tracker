@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ArrowIcon from "shared/assets/icons/Vector.svg";
+import { useFilter } from "shared/hooks";
 
 const options: { value: string; label: string }[] = [
   { value: "all", label: "Все статусы" },
@@ -8,14 +9,16 @@ const options: { value: string; label: string }[] = [
   { value: "Scheduled", label: "Match preparing" },
 ];
 export const Menu = () => {
-  const [selected, setSelected] = useState(options[0]); // Текущий выбор
-  const [open, setOpen] = useState(false); // Состояние меню
+  const [open, setOpen] = useState(false);
+  const { status, setStatus } = useFilter();
+
+  const selected = options.find((item) => item.value === status) || options[0];
 
   return (
     <div className="relative w-50">
-      {/* Выпадающий заголовок */}
       <button
-        className="w-full bg-black-light text-gray  px-5 py-2.5 rounded-xs flex items-center justify-between focus:text-white"
+        className="w-full bg-black-light text-gray  px-5 py-2.5 
+        rounded-xs flex items-center justify-between focus:text-white"
         onClick={() => setOpen(!open)}
       >
         {selected.label}
@@ -30,10 +33,10 @@ export const Menu = () => {
           {options.map((option) => (
             <li
               key={option.value}
-              className={`px-4 py-2 cursor-pointer transition-all 
-                hover:text-white hover:bg-gray-700`}
+              className={`px-4 py-2 cursor-pointer transition-all text-gray 
+                hover:text-white `}
               onClick={() => {
-                setSelected(option);
+                setStatus(option.value);
                 setOpen(false);
               }}
             >

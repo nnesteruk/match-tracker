@@ -1,7 +1,4 @@
-type MatchStatusProps = {
-  text: string;
-  className: string;
-};
+import { MatchStatusProps } from "shared/types";
 
 export const MatchStatus = ({ text, className }: MatchStatusProps) => {
   return (
