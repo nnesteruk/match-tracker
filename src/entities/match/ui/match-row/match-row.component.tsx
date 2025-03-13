@@ -9,7 +9,6 @@ export const MatchRow = () => {
   });
 
   const { status } = useFilter();
-  console.log(status);
 
   if (isLoading) {
     return <div>Loading...</div>;

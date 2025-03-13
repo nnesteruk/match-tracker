@@ -31,7 +31,7 @@ export const MatchItem: FC<MatchItemProps> = ({ match }) => {
           <img src={Logo} alt="logo command 1" />
           <h2>{match?.awayTeam?.name}</h2>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center gap-1">
           <p>
             {match?.awayScore} : {match?.homeScore}
           </p>

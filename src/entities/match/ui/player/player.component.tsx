@@ -1,5 +1,5 @@
-import { Players } from "entities/match/model/match.types";
 import PlayerIcon from "shared/assets/icons/avatar_global.svg";
+import { Players } from "shared/types";
 
 export const MatchPlayer = ({ player }: { player: Players }) => {
   return (
@@ -8,8 +8,9 @@ export const MatchPlayer = ({ player }: { player: Players }) => {
         <img src={PlayerIcon} alt="player icon" className="w-8" />
         <p className="text-[16px] truncate ">{player?.username}</p>
       </div>
-      <p className="text-white-dark text-[14px]">
-        Убийств: <span className="text-white text-[16px]">{player?.kills}</span>
+      <p className="text-white-dark text-sm flex gap-2 items-center">
+        Убийств:
+        <span className="text-white text-[16px] ">{player?.kills}</span>
       </p>
     </div>
   );
