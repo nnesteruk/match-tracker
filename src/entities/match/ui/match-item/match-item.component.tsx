@@ -8,6 +8,7 @@ import { MatchTeam } from "../team/team.component";
 
 export const MatchItem: FC<MatchItemProps> = ({ match }) => {
   const [arrowActive, setArrowActive] = useState(false);
+
   const status: Record<typeof match.status, string> = {
     Scheduled: "bg-orange px-2",
     Finished: "bg-red w-[92px] text-center px-0.5 ",
