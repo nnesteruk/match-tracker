@@ -1,1 +1,1 @@
-export { MatchStatus } from "./ui/match-status.component.tsx";
+export { MatchStatus } from "./match-status.component.tsx";

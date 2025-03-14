@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { matchesApi } from "entities/match/api";
 import { MatchItem } from "../match-item/match-item.component";
 import { useFilter } from "shared/hooks";
+import { Skeleton } from "shared/ui/skeleton";
 
 export const MatchRow = () => {
   const { data: matchList, isLoading } = useQuery({
@@ -11,7 +12,7 @@ export const MatchRow = () => {
   const { status } = useFilter();
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Skeleton />;
   }
 
   return (
