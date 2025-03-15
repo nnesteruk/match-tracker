@@ -1,6 +1,7 @@
 import { createContext } from "react";
+import { Status } from "shared/types";
 
 export const FilterContext = createContext<{
-  status: string;
-  setStatus: (value: string) => void;
-}>({ status: "all", setStatus: () => {} });
+  statusFilter: Status;
+  setStatusFilter: (value: Status) => void;
+}>({ statusFilter: Status.All, setStatusFilter: () => {} });

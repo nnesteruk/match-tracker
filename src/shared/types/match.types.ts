@@ -12,10 +12,17 @@ export type Team = {
   players: Players[];
 };
 
+export const enum Status {
+  Scheduled = "Scheduled",
+  Ongoing = "Ongoing",
+  Finished = "Finished",
+  All = "All",
+}
+
 export type MatchList = {
   awayScore: number;
   homeScore: number;
-  status: "Scheduled" | "Ongoing" | "Finished";
+  status: Status;
   time: string;
   title: string;
   homeTeam: Team;

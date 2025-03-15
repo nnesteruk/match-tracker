@@ -1,25 +1,30 @@
-import { MatchItemProps } from "entities/match/model/match.types";
+import { MatchTeam } from "../team/team.component";
 import { FC, useState } from "react";
-import Logo from "shared/assets/icons/illustrations_role.svg";
 import Arrow from "shared/assets/icons/arrow drop-list down.svg";
+import Logo from "shared/assets/icons/illustrations_role.svg";
+import { MatchList, Status } from "shared/types";
 import { MatchStatus } from "shared/ui/match-status";
 
-import { MatchTeam } from "../team/team.component";
+type MatchItemProps = {
+  match: MatchList;
+};
 
 export const MatchItem: FC<MatchItemProps> = ({ match }) => {
   const [arrowActive, setArrowActive] = useState(false);
 
-  const status: Record<typeof match.status, string> = {
-    Scheduled: "bg-orange px-2",
-    Finished: "bg-red w-[92px] text-center px-0.5 ",
-    Ongoing: "bg-green w-[92px] text-center px-0.5 ",
-  };
+  const status: string = {
+    [Status.Scheduled]: "bg-orange px-2",
+    [Status.Finished]: "bg-red w-[92px] text-center px-0.5 ",
+    [Status.Ongoing]: "bg-green w-[92px] text-center px-0.5 ",
+    [Status.All]: "default",
+  }[match.status];
 
-  const statusText: Record<typeof match.status, string> = {
-    Scheduled: "Match preparing",
-    Finished: "Finished ",
-    Ongoing: "Live",
-  };
+  const statusText: string = {
+    [Status.Scheduled]: "Match preparing",
+    [Status.Finished]: "Finished ",
+    [Status.Ongoing]: "Live",
+    [Status.All]: "default",
+  }[match.status];
 
   const arrowClick = () => {
     setArrowActive(!arrowActive);
@@ -37,8 +42,8 @@ export const MatchItem: FC<MatchItemProps> = ({ match }) => {
             {match?.awayScore} : {match?.homeScore}
           </p>
           <MatchStatus
-            text={statusText[match.status]}
-            className={`${status[match.status]} py-1.5 rounded-sm `}
+            text={statusText}
+            className={`${status} py-1.5 rounded-sm `}
           />
         </div>
         <div className="flex gap-2.5 items-center">

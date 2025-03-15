@@ -10,7 +10,7 @@ export const MatchPlayer = ({ player }: { player: Players }) => {
       </div>
       <p className="text-white-dark text-sm flex gap-2 items-center">
         Убийств:
-        <span className="text-white text-[16px] ">{player?.kills}</span>
+        <span className="text-white text-base ">{player?.kills}</span>
       </p>
     </div>
   );

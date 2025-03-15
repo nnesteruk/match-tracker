@@ -3,5 +3,6 @@
   "semi": true,
   "trailingComma": "all",
   "printWidth": 80,
-  "formatOnSave": true
+  "formatOnSave": true,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"]
 }

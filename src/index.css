@@ -22,6 +22,7 @@
 
   --color-purple: #9747ff;
 }
+
 :root {
   --color-white: #ffffff;
   --color-black: #06080c;
@@ -45,6 +46,7 @@
     transform: rotate(360deg);
   }
 }
+
 .spin {
   animation: spin 1s linear infinite;
 }

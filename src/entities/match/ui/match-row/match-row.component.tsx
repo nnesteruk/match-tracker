@@ -1,6 +1,6 @@
+import { MatchItem } from "../match-item/match-item.component";
 import { useQuery } from "@tanstack/react-query";
 import { matchesApi } from "entities/match/api";
-import { MatchItem } from "../match-item/match-item.component";
 import { useFilter } from "shared/hooks";
 import { Skeleton } from "shared/ui/skeleton";
 
@@ -9,7 +9,7 @@ export const MatchRow = () => {
     ...matchesApi.getQueryOptionsMatches(),
   });
 
-  const { status } = useFilter();
+  const { statusFilter } = useFilter();
 
   if (isLoading) {
     return <Skeleton />;
@@ -18,7 +18,9 @@ export const MatchRow = () => {
   return (
     <div className="flex flex-col gap-3 w-full">
       {matchList
-        ?.filter((item) => (status === "all" ? item : item.status === status))
+        ?.filter((item) =>
+          statusFilter === "All" ? item : item.status === statusFilter,
+        )
         .map((item, index) => <MatchItem match={item} key={index} />)}
     </div>
   );

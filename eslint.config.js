@@ -1,11 +1,11 @@
-import globals from "globals";
 import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import eslintReactHooks from "eslint-plugin-react-hooks";
-import eslintReact from "eslint-plugin-react";
-import eslintReactRefresh from "eslint-plugin-react-refresh";
-import prettierPlugin from "eslint-plugin-prettier";
 import eslintConfigPrettier from "eslint-config-prettier";
+import prettierPlugin from "eslint-plugin-prettier";
+import eslintReact from "eslint-plugin-react";
+import eslintReactHooks from "eslint-plugin-react-hooks";
+import eslintReactRefresh from "eslint-plugin-react-refresh";
+import globals from "globals";
+import tseslint from "typescript-eslint";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -41,6 +41,5 @@ export default [
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
-  // pluginReact.configs.flat.recommended,
   { ignores: ["node_modules", "dist"] },
 ];

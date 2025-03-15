@@ -3,6 +3,6 @@ import { ComponentPropsWithoutRef } from "react";
 export const Button = ({
   children,
   ...props
-}: ComponentPropsWithoutRef<"button"> & { children: React.ReactNode }) => {
+}: ComponentPropsWithoutRef<"button">) => {
   return <button {...props}>{children}</button>;
 };
